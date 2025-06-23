@@ -1,5 +1,5 @@
-# limesurvey-arm64V8
-Limesurvey For Armbian 64 [STB-B680H] 
+# Limesurvey-arm64V8
+Limesurvey khusus dijalnkan sistem Armbian 64 Bit di STB Merk ZTE tipe B680H-v2.1
 
 ## Struktur Direktori File
 ```
