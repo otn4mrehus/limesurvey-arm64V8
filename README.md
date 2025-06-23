@@ -7,9 +7,17 @@ Limesurvey For Armbian 64 [STB-B680H]
   - db/
   - app/
   - docker-compose.yaml
-
+```
+## Download source 
+```
+git clone https://github.com/otn4mrehus/limesurvey-arm64V8.git && \
+cd limesurvey-arm64V8
 ```
 ## Jalankan Docker Compose
+#### Jalankan Project Stack Docker
+```
+docker-compose -p 'limesurvey' up --build
+```
 #### Running Project Stack Docker
 ###### <i>Pilih salah satu</i>
 ```
@@ -18,4 +26,8 @@ docker-compose -p 'limesurvey' stop | start | restart
 #### Hapus Project Stack Docker
 ```
 docker-compose -p 'limesurvey' down -v 
+```
+## Jalankan Limesurvey
+```
+127.0.0.1:8082/admin
 ```
