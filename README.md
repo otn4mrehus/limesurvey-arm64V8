@@ -19,7 +19,7 @@ chmod -R 777 app
 ## Jalankan Docker Compose
 #### Jalankan Project Stack Docker
 ```
-docker-compose -p 'limesurvey' up --build
+docker-compose -p 'limesurvey' up --build -d
 ```
 #### Running Project Stack Docker
 ###### <i>Pilih salah satu</i>
