@@ -1,0 +1,49 @@
+#version: '3'
+version: '2.4'
+
+services:
+  mariadb:
+    image: arm64v8/mariadb:10.5
+    hostname: mariadb
+    container_name: limesurvey-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: limesurvey
+      MYSQL_USER: lsuser
+      MYSQL_PASSWORD: lspass
+    volumes:
+      - ./db:/var/lib/mysql
+    networks:
+      - limesurvey-net
+    mem_limit: 512m
+    cpus: 1.0
+
+  limesurvey:
+    image: acspri/limesurvey:latest
+    hostname: limesurvey
+    container_name: limesurvey
+    restart: unless-stopped
+    ports:
+      - 8082:80
+    environment:
+      LIMESURVEY_DB_HOST: limesurvey-db
+      LIMESURVEY_DB_NAME: limesurvey
+      LIMESURVEY_DB_USER: lsuser
+      LIMESURVEY_DB_PASSWORD: lspass
+      LIMESURVEY_ADMIN_USER: admin
+      LIMESURVEY_ADMIN_PASSWORD: admin123
+      LIMESURVEY_ADMIN_NAME: Admin Survey
+      LIMESURVEY_ADMIN_EMAIL: masihgurutkj@gmail.com
+    depends_on:
+      - mariadb
+    volumes:
+      - ./app:/var/www/html/upload
+    networks:
+      - limesurvey-net
+    mem_limit: 512m
+    cpus: 1.0
+
+networks:
+  limesurvey-net:
+    driver: bridge
