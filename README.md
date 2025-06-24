@@ -14,7 +14,8 @@ git clone https://github.com/otn4mrehus/limesurvey-arm64V8.git && \
 cd limesurvey-arm64V8 && \
 mkdir -p /root/PROJECT/db /root/PROJECT/app && \
 chmod -R 777 /root/PROJECT/db  && \
-chmod -R 777 /root/PROJECT/app
+chmod -R 777 /root/PROJECT/app && \
+docker-compose -p 'limesurvey' up --build -d 
 
 Note:
 Direktori silakan sesuaikan sendiri :
