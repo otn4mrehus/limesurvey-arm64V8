@@ -17,9 +17,9 @@ chmod -R 777 /root/PROJECT/db  && \
 chmod -R 777 /root/PROJECT/app
 
 Note:
-<i>Direktori silakan sesuaikan sendiri :
+Direktori silakan sesuaikan sendiri :
 /root/PROJECT/ atau ./
-</i>
+
 ```
 ## Jalankan Docker Compose
 #### Jalankan Project Stack Docker
