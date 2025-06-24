@@ -16,10 +16,11 @@ mkdir -p /root/PROJECT/db /root/PROJECT/app && \
 chmod -R 777 /root/PROJECT/db  && \
 chmod -R 777 /root/PROJECT/app && \
 docker-compose -p 'limesurvey' up --build -d 
-
-
-
 ```
+###### Note:
+###### <i> Direktori silakan sesuaikan sendiri : </i>
+###### <i> /root/PROJECT/ atau ./  </i>
+
 ## Jalankan Docker Compose (manual)
 #### Jalankan Project Stack Docker
 ```
