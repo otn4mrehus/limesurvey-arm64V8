@@ -8,7 +8,7 @@ Limesurvey khusus dijalnkan sistem Armbian 64 Bit di STB Merk ZTE tipe B680H-v2.
   - app/
   - docker-compose.yaml
 ```
-## Download source 
+## Download & Run Source 
 ```
 git clone https://github.com/otn4mrehus/limesurvey-arm64V8.git && \
 cd limesurvey-arm64V8 && \
@@ -21,7 +21,7 @@ Direktori silakan sesuaikan sendiri :
 /root/PROJECT/ atau ./
 
 ```
-## Jalankan Docker Compose
+## Jalankan Docker Compose (manual)
 #### Jalankan Project Stack Docker
 ```
 docker-compose -p 'limesurvey' up --build -d
