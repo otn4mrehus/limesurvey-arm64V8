@@ -13,7 +13,7 @@ services:
       MYSQL_USER: lsuser
       MYSQL_PASSWORD: lspass
     volumes:
-      - ./db:/var/lib/mysql
+      - /root/PROJECT/survey/db:/var/lib/mysql
     networks:
       - limesurvey-net
     mem_limit: 512m
@@ -38,7 +38,7 @@ services:
     depends_on:
       - mariadb
     volumes:
-      - ./app:/var/www/html/upload
+      - /root/PROJECT/survey/app:/var/www/html/upload:rw
     networks:
       - limesurvey-net
     mem_limit: 512m
