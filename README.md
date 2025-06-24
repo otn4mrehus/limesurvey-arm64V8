@@ -17,9 +17,7 @@ chmod -R 777 /root/PROJECT/db  && \
 chmod -R 777 /root/PROJECT/app && \
 docker-compose -p 'limesurvey' up --build -d 
 
-Note:
-Direktori silakan sesuaikan sendiri :
-/root/PROJECT/ atau ./
+
 
 ```
 ## Jalankan Docker Compose (manual)
