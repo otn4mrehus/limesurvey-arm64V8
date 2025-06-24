@@ -5,10 +5,10 @@ services:
   mariadb:
     image: arm64v8/mariadb:10.5
     hostname: mariadb
-    container_name: limesurvey-db
+    container_name: limesurvey_db
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_ROOT_PASSWORD: toor
       MYSQL_DATABASE: limesurvey
       MYSQL_USER: lsuser
       MYSQL_PASSWORD: lspass
@@ -22,7 +22,7 @@ services:
   limesurvey:
     image: acspri/limesurvey:latest
     hostname: limesurvey
-    container_name: limesurvey
+    container_name: limesurvey_app
     restart: unless-stopped
     ports:
       - 8082:80
@@ -43,6 +43,22 @@ services:
       - limesurvey-net
     mem_limit: 512m
     cpus: 1.0
+
+  phpmyadmin:
+    image: arm64v8/phpmyadmin
+    container_name: limesurvey-phpmyadmin
+    restart: unless-stopped
+    depends_on:
+      - mariadb
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+    networks:
+      - limesurvey-net
+    mem_limit: 128m
+    cpus: 1.0
+    
 
 networks:
   limesurvey-net:
